@@ -126,10 +126,11 @@ describe("QA Assessment", () => {
     it("should Validate that the total amount collected is 296", () => {
 
         const expected = 296;
+        let total = 0
         cy.get(".tableFixHead")
             .find("#product tbody td:last-child")
             .each(($element) => {
-               let total = total + +($element.text())
+               total = total + +($element.text())
             })
 
 
